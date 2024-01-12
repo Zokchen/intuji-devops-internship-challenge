@@ -1,4 +1,4 @@
-1) create bash script for docker installation
+### 1) create bash script for docker installation
 
 ***
 #!/bin/bash
@@ -33,11 +33,11 @@ echo "Docker has been installed. Please log out and log back in to apply group c
 
 ***
 
-2)  create an executable file : chmod +x install_docker.sh
+###2)  create an executable file : chmod +x install_docker.sh
 
-3) run the file: ./install_docker.sh
+###3) run the file: ./install_docker.sh
 
-4) create docker file:
+###4) create docker file:
 
    ***********
 
@@ -59,17 +59,17 @@ CMD ["nginx", "-g", "daemon off;"]
 
 **************
 
-5) build the docker image: docker build -t my-php-app .
+###5) build the docker image: docker build -t my-php-app .
 
-6) run the docker image: docker run -p 8080:80 my-php-app
+###6) run the docker image: docker run -p 8080:80 my-php-app
 
-7) tag docker image: docker tag my-php-app:latest zoks/my-php-app:latest
+###7) tag docker image: docker tag my-php-app:latest zoks/my-php-app:latest
 
-8) login into docker: docker login
+###8) login into docker: docker login
 
-9) push docker image: docker push zoks/my-php-app:latest
+###9) push docker image: docker push zoks/my-php-app:latest
 
-10) create docker-compose.yml file:
+###10) create docker-compose.yml file:
 
 ****
 
@@ -94,24 +94,24 @@ services:
 ****
 
 
-11) run command for docker compose: docker-compose up -d
+###11) run command for docker compose: docker-compose up -d
 
-12) Create a directory to store Jenkins data: mkdir -p ~/jenkins_home
+###12) Create a directory to store Jenkins data: mkdir -p ~/jenkins_home
 
-13) Run Jenkins as a Docker container: docker run -d -p 8081:8080 -p 50000:50000 -v ~/jenkins_home:/var/jenkins_home --name jenkins jenkins/jenkins:lts
+###13) Run Jenkins as a Docker container: docker run -d -p 8081:8080 -p 50000:50000 -v ~/jenkins_home:/var/jenkins_home --name jenkins jenkins/jenkins:lts
 
-14) Copy the password and paste it in the Jenkins web interface to unlock Jenkins: docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+###14) Copy the password and paste it in the Jenkins web interface to unlock Jenkins: docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
-15) Install Jenkins Plugins
+###15) Install Jenkins Plugins
 
 Docker Pipeline
 GitHub
 
-16) Set Up GitHub Integration
+###16) Set Up GitHub Integration
 
 Add your GitHub credentials.
 
-17) Create a Freestyle Project
+###17) Create a Freestyle Project
 
 In the project configuration:
 
@@ -134,7 +134,7 @@ Click "Add post-build action" > "Archive the artifacts."
 Specify the files or directories to archive (e.g., dockerized-php-app).
 Save the project configuration.
 
-18) Trigger the Build
+###18) Trigger the Build
 Back on the Jenkins dashboard, click on your project.
 
 Click "Build Now" to trigger the build.
